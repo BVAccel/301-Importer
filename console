@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use RedirectImport\GetCurrentRedirectsCommand;
+use RedirectImport\ImportRedirectsCommand;
+
+$app = new Application();
+
+$app->add( new ImportRedirectsCommand() );
+$app->add( new GetCurrentRedirectsCommand() );
+
+$app->run();
